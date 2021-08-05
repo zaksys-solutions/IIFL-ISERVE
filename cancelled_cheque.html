@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no;user-scalable=0;"/>
+<link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap"
+        rel="stylesheet">
+<link href="css/form.css" rel="stylesheet" type="text/css">
+<title>IIFL Securities</title>
+<body class="fixhead">
+<div class="desk-align ">
+<div class="desk-header">
+<div class="container">
+  <img src="images/desk_logo.png" alt="Logo"> </div>
+</div>
+
+ 
+ 
+
+
+<div class="page-container hauto space">
+
+<div class="rcol">
+<div class="form-wrapper">
+ 
+  <form id="regForm" onsubmit="return validateForm()" >
+    
+    
+    
+    
+  
+    
+    <h1 class="deskhead">Share your cancelled cheque
+</h1>
+    <div class="tab-block">
+      <div class="step header top-fix-header"><div class="left_arr"><a href="pan_details.html" class="white"><img src="images/left_arrow.png" border="0"></a></div><h3 style="width:80%;">Please share a picture of your cancelled cheque. The cheque should be of the same bank account which you shared&nbsp;earlier</h3><div class="logo"><img src="images/desk_logo.png" alt="IIFL Securities"></div></div>
+      <div class="tab show">
+        <div class="white-screen uscreens">
+         <h3>Please share a picture of your cancelled cheque. The cheque should be of the same bank account which you shared&nbsp;earlier</h3>
+         <div class="img-block fixarea" style=" margin:auto; text-align:center;"><img src="images/cancelled-cheque.jpg" style="display:block; margin:auto;"></div>
+        <div class="mfix text-center relative" style="padding-top:08px; bottom:0;">   
+             
+           <div class="input-file"><input type="file" capture="user" accept="image/*" onclick="document.getElementById('LoadingScreen').style.display='block';document.getElementById('LOverlay').style.display='block';" class="loadnext"> <img src="images/icons/camera.png">Share picture</div>
+          </div>
+         
+          
+            <!--<p class="text-center" style="padding:2px 0 0 0;"><span class="replacetxt"></span></p>
+           <button type="button" class="button mt15" id="nsdlredirect">Next</button>-->
+           
+  
+             
+         
+        </div>
+      </div>
+</div>
+  
+    
+   
+ </form>
+ </div>
+ </div>
+  
+
+</div>
+ 
+<footer class="relative"> <div class="container">Copyright &copy; 2019 IIFL Securities Ltd. All rights  Reserved.</div></footer></div>
+<!-- LoadingScreen PopUp -->
+<div id="LoadingScreen" class="popup small-popup center-popup"> 
+       <div class="popform-cont">
+       
+       <p class="icon-img"><img src="images/icons/Shri-Yantra-IIFL-Logo.png"></p>
+       <p style="margin-bottom:0;" id="timer1"><span id="count"></span> secs</p>
+       <h3 style="padding-bottom:0;">Please wait, you will soon be redirected to the&nbsp;NSDL website for online signing of your&nbsp;application</h3>
+      
+      </div>
+      
+      
+    </div>
+    <div class="overlay" id="LOverlay"></div>
+<script src="js/jquery-3.6.0.min.js"></script> 
+<script src="js/main.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+ $( ".segments li:first-child(1) input" ).click(function() {
+	$(".segments li:nth-child(1) input").removeAttr("checked");
+});
+
+});
+</script>
+<script>
+$(".loadnext").click( function() {
+	startpoptimer();
+	setTimeout(function(){ window.location.href='final.html'; }, 10000);  
+});
+</script>
+
+
+</body>
+</html>

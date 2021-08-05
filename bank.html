@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no;user-scalable=0;"/>
+<link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap"
+        rel="stylesheet">
+         <link rel="stylesheet" href="css/jquery-ui.css">
+<link href="css/form.css" rel="stylesheet" type="text/css">
+
+<title>IIFL Securities</title>
+<body class="fixhead" style="height:auto; overflow:auto;">
+<div class="desk-align" style="height:auto;">
+<div class="desk-header">
+<div class="container">
+  <img src="images/desk_logo.png" alt="Logo"> </div>
+</div>
+ 
+
+
+<div class="page-container hauto space">
+<div class="lcol">
+ 
+ <div class="left_img">
+   <img src="images/left_img.png" width="401" height="339"> 
+   </div>
+</div>
+<div class="rcol">
+<div class="form-wrapper">
+ 
+  <form id="regForm" onsubmit="return validateForm()" >
+    
+    
+    
+    
+  
+    
+    <h1 class="deskhead">Share your bank details</h1>
+    <div class="tab-block">
+      <div class="step header top-fix-header mb0"><div class="left_arr"><a href="birthdate.html"><img src="images/left_arrow.png" border="0"></a></div> <h3 style="width:65%;">Funds will be transferred to and from this&nbsp;account</h3><div class="logo"><img src="images/desk_logo.png" alt="IIFL Securities"></div></div>
+      <div class="tab show">
+        <div class="white-screen bankdetails">
+      
+        <div class="samespace">
+          <h3>Funds will be transferred to and from this&nbsp;account
+</h3>
+       <div class="icon-img"><img src="images/icons/bank.png" alt="Bank" id="focusinputclick"></div>
+       
+        <div class="text-center" id="SelectBank">        
+        <input type="text" class="form-field text-center panfield focusinput" placeholder="Select your Bank" name="bank" id="bank" autofocus>
+        <div class="bank-list">
+        <h4>Popular Bank</h4>
+        	<ul class="liststyleno">
+             <li><span class="blogo"><img src="images/logo/State.jpg"></span> <span class="bname">State Bank of India</span>
+            </li>
+           
+            <li><span class="blogo"><img src="images/logo/Hdfc.jpg"></span> <span class="bname">HDFC Bank</span>
+            </li>
+            <li><span class="blogo"><img src="images/logo/Bank-of-Baroda.jpg"></span> <span class="bname">Bank of Baroda</span>
+            </li>
+            <li><span class="blogo"><img src="images/logo/icici.jpg"></span> <span class="bname">ICICI Bank Limited</span>
+            </li>
+            <li><span class="blogo"><img src="images/logo/Kotak.jpg"></span> <span class="bname">Kotak Mahindra Bank</span>
+            </li>
+            
+            </ul>
+        </div>
+        </div>
+        
+        <div class="text-center" id="SelectBranch">        
+        
+        <input id="tags" class="form-field text-center selectbank panfield" placeholder="Enter Branch name or IFSC" type="text" disabled  autofocus style="text-transform:uppercase;">
+       
+        <div class="SelectBranchBox" id="BranchDetails" style="display:none;">
+        	<div class="SelectBranchHead">
+            	<div class="Banklogo"><img src="images/logo/Hdfc.jpg"> <p>HDFC Bank</p></div>
+                <a href="#" class="branchedit">Edit</a> </div>
+                <div class="SelectBranchDetails">
+                	<ul class="liststyleno">
+                    	<li><span>Branch Name</span> <span>Mumbai- CBD</span></li>
+                        <li><span>IFSC Code</span> <span>HDFC0000830</span></li>
+                        <li><span>Address</span> <span>Shop No 9,10,11 And 56, Ground Flr,plot No 21, Sector 11, Cbd Belapur Navi Mumbai Maharashtra 400614</span></li>
+                        
+                        </ul>
+                     
+                </div>
+                </div>
+     
+        </div>
+        
+        <div class="text-center" id="AccNumber">        
+        <input type="tel" maxlength="20" class="form-field text-center panfield" placeholder="Enter Account Number" disabled name="numonly" id="Anumber" autofocus>
+        </div>
+        <p class="text-center" style="font-size:12px;"><font class="rupee">&#8377;</font>1 will be deposited in this account for verification</p>
+        
+        
+       
+    <p class="mb0" style="padding-bottom:50px;"><button type="button" class="button" onclick="window.location.href='segments.html'" disabled>Next</button>
+          </p>
+         </div>
+
+              
+            
+        </div>
+      </div>
+</div>
+    <!-- Proof END --> 
+    
+   
+ </form>
+ </div>
+ </div>
+  
+
+</div>
+</div>
+</div>
+<footer class="relative"> <div class="container">Copyright &copy; 2019 IIFL Securities Ltd. All rights  Reserved.</div></footer>
+<script src="js/jquery-3.6.0.min.js"></script> 
+<script src="js/main.js" type="text/javascript"></script>
+<script src="js/jquery-ui.js"></script>
+<script>
+$( function() {
+    var availableTags = [
+      "Nerul Branch. IFSC: HDFC0000257",
+      "Nalasopara Branch. IFSC: HDFC0000258",
+      "Nagaon Branch. IFSC: HDFC0000259"
+    ];
+    $( "#tags" ).autocomplete({
+      source: availableTags
+    });
+  } );
+$(function() {
+  $("[autofocus]").on("load", function() {
+    if (this.setSelectionRange) {
+      var len = this.value.length * 2;
+      this.setSelectionRange(len, len);
+    } else {
+      this.value = this.value;
+    }
+    this.scrollTop = 999999;
+  }).focus();
+});
+$(document).ready(function(){
+$('#SelectBank').click(function () {
+    $('#SelectBranch input').removeAttr('disabled');
+	$('#SelectBank input').attr('disabled','disabled');
+	$('.bank-list').hide('');
+	$('#SelectBank input:text').attr('placeholder','HDFC Bank').addClass('ChangePlaceholder');;
+	$("#SelectBank input::-webkit-input-placeholder").css({"color" : "#b2cde0"});
+});
+
+$('#SelectBranch').click(function () {
+    $('#AccNumber input').removeAttr('disabled');
+	//$('#SelectBranch input').attr('disabled','disabled');
+});
+$('#SelectBranch input').click(function () {
+	//$('#BranchDetails').show('');
+});
+$('.branchedit').click(function () {
+	$('#BranchDetails').hide('');
+	$('#SelectBranch input').removeAttr('disabled','disabled');
+});
+$('#AccNumber input').click(function () {
+	$('button').removeAttr('disabled');
+});
+ });
+</script>
+
+</body>
+</html>
